@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# board specific sensors init
+#------------------------------------------------------------------------------
+
+rgbled start -I
+rgbled_ncp5623c start -I
+
+board_adc start
+
+ms5611 -s -b 1 start
+
+mpu6000 -s -b 1 -R 14 start
+# mpu6000 -s -b 1 -R 10 start
+
+ist8310 -I -R 10 start
