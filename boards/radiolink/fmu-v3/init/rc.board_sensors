@@ -2,6 +2,7 @@
 #
 # board specific sensors init
 #------------------------------------------------------------------------------
+px4io start
 
 rgbled start -I
 rgbled_ncp5623c start -I

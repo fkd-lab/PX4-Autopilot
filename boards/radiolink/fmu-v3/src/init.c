@@ -330,7 +330,8 @@ stm32_boardinitialize(void)
 	stm32_configgpio(GPIO_VDD_SERVO_VALID);
 	stm32_configgpio(GPIO_VDD_USB_VALID);
 	stm32_configgpio(GPIO_VDD_5V_HIPOWER_OC);
-	stm32_configgpio(GPIO_VDD_5V_PERIPH_OC);
+        stm32_configgpio(GPIO_VDD_5V_PERIPH_OC);
+        stm32_configgpio(GPIO_VDD_3V3_SENSORS_EN);
 
 	/*
 	 * CAN GPIO config.
