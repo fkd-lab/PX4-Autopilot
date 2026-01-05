@@ -47,6 +47,9 @@ publications:
   # - topic: /uav0/out/vehicle_trajectory_waypoint_desired
   #   type: px4_msgs::msg::VehicleTrajectoryWaypoint
 
+  - topic: /uav0/out/battery_status
+    type: px4_msgs::msg::BatteryStatus
+
 subscriptions:
 
   - topic: /uav0/in/offboard_control_mode
