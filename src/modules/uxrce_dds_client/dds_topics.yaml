@@ -38,8 +38,8 @@ publications:
   - topic: /uav0/out/vehicle_local_position
     type: px4_msgs::msg::VehicleLocalPosition
 
-  # - topic: /uav0/out/vehicle_odometry
-  #   type: px4_msgs::msg::VehicleOdometry
+  - topic: /uav0/out/vehicle_odometry
+    type: px4_msgs::msg::VehicleOdometry
 
   - topic: /uav0/out/vehicle_status
     type: px4_msgs::msg::VehicleStatus
