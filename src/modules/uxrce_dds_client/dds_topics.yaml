@@ -35,8 +35,8 @@ publications:
   # - topic: /uav0/out/vehicle_gps_position
   #   type: px4_msgs::msg::SensorGps
 
-  - topic: /uav0/out/vehicle_local_position
-    type: px4_msgs::msg::VehicleLocalPosition
+  # - topic: /uav0/out/vehicle_local_position
+  #   type: px4_msgs::msg::VehicleLocalPosition
 
   - topic: /uav0/out/vehicle_odometry
     type: px4_msgs::msg::VehicleOdometry
