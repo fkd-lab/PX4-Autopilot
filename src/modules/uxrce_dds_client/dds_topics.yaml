@@ -14,8 +14,8 @@ publications:
   # - topic: /uav0/out/position_setpoint_triplet
   #   type: px4_msgs::msg::PositionSetpointTriplet
 
-  - topic: /uav0/out/sensor_combined
-    type: px4_msgs::msg::SensorCombined
+  # - topic: /uav0/out/sensor_combined
+  #   type: px4_msgs::msg::SensorCombined
 
   # - topic: /uav0/out/timesync_status
   #   type: px4_msgs::msg::TimesyncStatus
