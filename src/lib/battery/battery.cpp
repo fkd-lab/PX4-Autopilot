@@ -171,8 +171,14 @@ battery_status_s Battery::getBatteryStatus()
 
 void Battery::publishBatteryStatus(const battery_status_s &battery_status)
 {
-	if (_source == _params.source) {
-		_battery_status_pub.publish(battery_status);
+	static int pub_count = 0;
+	pub_count++;
+	// Limit publication rate to 2 Hz
+	if (pub_count >= 50) {
+		pub_count = 0;
+		if (_source == _params.source) {
+			_battery_status_pub.publish(battery_status);
+		}
 	}
 }
 

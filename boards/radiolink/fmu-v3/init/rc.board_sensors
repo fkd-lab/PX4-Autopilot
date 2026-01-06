@@ -16,4 +16,4 @@ mpu6000 -s -b 1 -R 14 start
 
 ist8310 -I -R 10 start
 
-uxrce_dds_client start -t serial -d /dev/ttyS6 -b 460800
+uxrce_dds_client start -t serial -d /dev/ttyS6 -b 230400

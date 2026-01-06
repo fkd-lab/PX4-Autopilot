@@ -345,6 +345,8 @@ if(EXISTS ${BOARD_DEFCONFIG})
 	if(CONSTRAINED_MEMORY)
 		set(px4_constrained_memory_build "1" CACHE INTERNAL "constrained memory build" FORCE)
 		add_definitions(-DCONSTRAINED_MEMORY)
+	else()
+		set(px4_constrained_memory_build "0" CACHE INTERNAL "constrained memory build" FORCE)
 	endif()
 
 	if(TESTING)
