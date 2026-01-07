@@ -50,6 +50,10 @@ publications:
   - topic: /uav0/out/battery_status
     type: px4_msgs::msg::BatteryStatus
 
+  # - topic: /uav0/out/failsafe_flags
+  #   type: px4_msgs::msg::FailsafeFlags
+
+
 subscriptions:
 
   - topic: /uav0/in/offboard_control_mode
