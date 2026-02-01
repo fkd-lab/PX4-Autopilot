@@ -289,6 +289,11 @@ then
 	uxrce_dds_port="$PX4_UXRCE_DDS_PORT"
 fi
 
+if [ -n "$PX4_UXRCE_DDS_NS_IDX" ]
+then
+	param set UXRCE_DDS_NS_IDX $PX4_UXRCE_DDS_NS_IDX
+fi
+
 uxrce_dds_client start -t udp -h 127.0.0.1 -p $uxrce_dds_port $uxrce_dds_ns
 
 if param greater -s MNT_MODE_IN -1

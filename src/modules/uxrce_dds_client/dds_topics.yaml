@@ -5,92 +5,95 @@
 #####
 publications:
 
-  # - topic: /uav1/out/collision_constraints
+  # - topic: /fmu/out/collision_constraints
   #   type: px4_msgs::msg::CollisionConstraints
 
-  # - topic: /uav1/out/failsafe_flags
+  # - topic: /fmu/out/failsafe_flags
   #   type: px4_msgs::msg::FailsafeFlags
 
-  # - topic: /uav1/out/position_setpoint_triplet
+  # - topic: /fmu/out/position_setpoint_triplet
   #   type: px4_msgs::msg::PositionSetpointTriplet
 
-  # - topic: /uav1/out/sensor_combined
+  # - topic: /fmu/out/sensor_combined
   #   type: px4_msgs::msg::SensorCombined
 
-  # - topic: /uav1/out/timesync_status
+  # - topic: /fmu/out/timesync_status
   #   type: px4_msgs::msg::TimesyncStatus
 
-  # - topic: /uav1/out/vehicle_angular_velocity
+  # - topic: /fmu/out/vehicle_angular_velocity
   #   type: px4_msgs::msg::VehicleAngularVelocity
 
-  # - topic: /uav1/out/vehicle_attitude
+  # - topic: /fmu/out/vehicle_attitude
   #   type: px4_msgs::msg::VehicleAttitude
 
-  # - topic: /uav1/out/vehicle_control_mode
+  # - topic: /fmu/out/vehicle_control_mode
   #   type: px4_msgs::msg::VehicleControlMode
 
-  # - topic: /uav1/out/vehicle_global_position
+  # - topic: /fmu/out/vehicle_global_position
   #   type: px4_msgs::msg::VehicleGlobalPosition
 
-  # - topic: /uav1/out/vehicle_gps_position
+  # - topic: /fmu/out/vehicle_gps_position
   #   type: px4_msgs::msg::SensorGps
 
-  # - topic: /uav1/out/vehicle_local_position
+  # - topic: /fmu/out/vehicle_local_position
   #   type: px4_msgs::msg::VehicleLocalPosition
 
-  - topic: /uav1/out/vehicle_odometry
+  - topic: /fmu/out/vehicle_land_detected
+    type: px4_msgs::msg::VehicleLandDetected
+
+  - topic: /fmu/out/vehicle_odometry
     type: px4_msgs::msg::VehicleOdometry
 
-  - topic: /uav1/out/vehicle_status
+  - topic: /fmu/out/vehicle_status
     type: px4_msgs::msg::VehicleStatus
 
-  # - topic: /uav1/out/vehicle_trajectory_waypoint_desired
+  # - topic: /fmu/out/vehicle_trajectory_waypoint_desired
   #   type: px4_msgs::msg::VehicleTrajectoryWaypoint
 
-  - topic: /uav1/out/battery_status
+  - topic: /fmu/out/battery_status
     type: px4_msgs::msg::BatteryStatus
 
-  - topic: /uav1/out/failsafe_flags
+  - topic: /fmu/out/failsafe_flags
     type: px4_msgs::msg::FailsafeFlags
 
 
 subscriptions:
 
-  - topic: /uav1/in/offboard_control_mode
+  - topic: /fmu/in/offboard_control_mode
     type: px4_msgs::msg::OffboardControlMode
 
-  # - topic: /uav1/in/onboard_computer_status
+  # - topic: /fmu/in/onboard_computer_status
   #   type: px4_msgs::msg::OnboardComputerStatus
 
-  # - topic: /uav1/in/obstacle_distance
+  # - topic: /fmu/in/obstacle_distance
   #   type: px4_msgs::msg::ObstacleDistance
 
-  # - topic: /uav1/in/sensor_optical_flow
+  # - topic: /fmu/in/sensor_optical_flow
   #   type: px4_msgs::msg::SensorOpticalFlow
 
-  # - topic: /uav1/in/telemetry_status
+  # - topic: /fmu/in/telemetry_status
   #   type: px4_msgs::msg::TelemetryStatus
 
-  - topic: /uav1/in/trajectory_setpoint
+  - topic: /fmu/in/trajectory_setpoint
     type: px4_msgs::msg::TrajectorySetpoint
 
-  # - topic: /uav1/in/vehicle_attitude_setpoint
+  # - topic: /fmu/in/vehicle_attitude_setpoint
   #   type: px4_msgs::msg::VehicleAttitudeSetpoint
 
-  # - topic: /uav1/in/vehicle_mocap_odometry
+  # - topic: /fmu/in/vehicle_mocap_odometry
   #   type: px4_msgs::msg::VehicleOdometry
 
-  # - topic: /uav1/in/vehicle_rates_setpoint
+  # - topic: /fmu/in/vehicle_rates_setpoint
   #   type: px4_msgs::msg::VehicleRatesSetpoint
 
-  - topic: /uav1/in/vehicle_visual_odometry
+  - topic: /fmu/in/vehicle_visual_odometry
     type: px4_msgs::msg::VehicleOdometry
 
-  - topic: /uav1/in/vehicle_command
+  - topic: /fmu/in/vehicle_command
     type: px4_msgs::msg::VehicleCommand
 
-  # - topic: /uav1/in/vehicle_trajectory_bezier
+  # - topic: /fmu/in/vehicle_trajectory_bezier
   #   type: px4_msgs::msg::VehicleTrajectoryBezier
 
-  # - topic: /uav1/in/vehicle_trajectory_waypoint
+  # - topic: /fmu/in/vehicle_trajectory_waypoint
   #   type: px4_msgs::msg::VehicleTrajectoryWaypoint

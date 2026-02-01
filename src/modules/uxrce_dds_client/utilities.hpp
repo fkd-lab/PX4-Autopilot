@@ -22,11 +22,11 @@ uxrObjectId topic_id_from_orb(ORB_ID orb_id, uint8_t instance = 0)
 static bool generate_topic_name(char *topic, const char *client_namespace, const char *direction, const char *name)
 {
 	if (client_namespace != nullptr) {
-		int ret = snprintf(topic, TOPIC_NAME_SIZE, "rt/%s/uav1/%s/%s", client_namespace, direction, name);
+		int ret = snprintf(topic, TOPIC_NAME_SIZE, "rt/%s/fmu/%s/%s", client_namespace, direction, name);
 		return (ret > 0 && ret < TOPIC_NAME_SIZE);
 	}
 
-	int ret = snprintf(topic, TOPIC_NAME_SIZE, "rt/uav1/%s/%s", direction, name);
+	int ret = snprintf(topic, TOPIC_NAME_SIZE, "rt/fmu/%s/%s", direction, name);
 	return (ret > 0 && ret < TOPIC_NAME_SIZE);
 }
 
