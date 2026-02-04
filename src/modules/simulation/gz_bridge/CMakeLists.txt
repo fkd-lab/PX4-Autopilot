@@ -36,7 +36,7 @@ find_package(gz-transport
 	#REQUIRED COMPONENTS core
 	NAMES
 		#ignition-transport11 # IGN (Fortress and earlier) no longer supported
-		gz-transport12
+		gz-transport13
 	#QUIET
 )
 
@@ -46,7 +46,7 @@ if(gz-transport_FOUND)
 
 	set(GZ_TRANSPORT_VER ${gz-transport_VERSION_MAJOR})
 
-	if(GZ_TRANSPORT_VER GREATER_EQUAL 12)
+	if(GZ_TRANSPORT_VER GREATER_EQUAL 13)
 		set(GZ_TRANSPORT_LIB gz-transport${GZ_TRANSPORT_VER}::core)
 	else()
 		set(GZ_TRANSPORT_LIB ignition-transport${GZ_TRANSPORT_VER}::core)
