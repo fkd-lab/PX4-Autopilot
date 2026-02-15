@@ -75,7 +75,7 @@ Land::on_active()
 {
 	/* for VTOL update landing location during back transition */
 	if (_navigator->get_vstatus()->is_vtol &&
-	    _navigator->get_vstatus()->in_transition_mode) {
+	    _navigator->get_vstatus()->in_transition_mode && _navigator->get_local_position()->xy_global) {
 		struct position_setpoint_triplet_s *pos_sp_triplet = _navigator->get_position_setpoint_triplet();
 
 		// create a virtual wp 1m in front of the vehicle to track during the backtransition

@@ -246,7 +246,9 @@ void FlightTaskAuto::_prepareLandSetpoints()
 
 	if (_type_previous != WaypointType::land) {
 		// initialize yaw and xy-position
-		_land_heading = _yaw_setpoint;
+		_land_heading = PX4_ISFINITE(_yaw_setpoint) ? _yaw_setpoint : _yaw;
+		// Reset yaw-rate limiting reference on mode entry to avoid transients from previous mode.
+		_yaw_sp_prev = _land_heading;
 		_stick_acceleration_xy.resetPosition(Vector2f(_target(0), _target(1)));
 		_initial_land_position = Vector3f(_target(0), _target(1), NAN);
 	}

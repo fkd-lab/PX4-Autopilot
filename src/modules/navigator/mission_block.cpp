@@ -828,9 +828,29 @@ MissionBlock::set_land_item(struct mission_item_s *item)
 	item->nav_cmd = NAV_CMD_LAND;
 
 	// set land item to current position
-	item->lat = _navigator->get_global_position()->lat;
-	item->lon = _navigator->get_global_position()->lon;
-	item->yaw = _navigator->get_local_position()->heading;
+	// item->lat = _navigator->get_global_position()->lat;
+	// item->lon = _navigator->get_global_position()->lon;
+	if (_navigator->get_local_position()->xy_global) {
+		item->lat = _navigator->get_global_position()->lat;
+		item->lon = _navigator->get_global_position()->lon;
+
+	} else {
+		item->lat = (double)NAN;
+		item->lon = (double)NAN;
+	}
+	// Preserve heading at land activation if the estimate is reliable.
+	if (_navigator->get_local_position()->heading_good_for_control
+	    && PX4_ISFINITE(_navigator->get_local_position()->heading)) {
+		item->yaw = _navigator->get_local_position()->heading;
+
+	} else if (_navigator->get_position_setpoint_triplet()->current.yaw_valid
+		   && PX4_ISFINITE(_navigator->get_position_setpoint_triplet()->current.yaw)) {
+		// Fallback to the previously active yaw setpoint (for example from Offboard).
+		item->yaw = _navigator->get_position_setpoint_triplet()->current.yaw;
+
+	} else {
+		item->yaw = NAN;
+	}
 
 	item->altitude = 0;
 	item->altitude_is_relative = false;
