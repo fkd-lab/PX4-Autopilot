@@ -38,8 +38,8 @@ publications:
   # - topic: /fmu/out/vehicle_local_position
   #   type: px4_msgs::msg::VehicleLocalPosition
 
-  - topic: /fmu/out/vehicle_land_detected
-    type: px4_msgs::msg::VehicleLandDetected
+  # - topic: /fmu/out/vehicle_land_detected
+  #   type: px4_msgs::msg::VehicleLandDetected
 
   - topic: /fmu/out/vehicle_odometry
     type: px4_msgs::msg::VehicleOdometry
@@ -53,8 +53,8 @@ publications:
   - topic: /fmu/out/battery_status
     type: px4_msgs::msg::BatteryStatus
 
-  - topic: /fmu/out/failsafe_flags
-    type: px4_msgs::msg::FailsafeFlags
+  # - topic: /fmu/out/failsafe_flags
+  #   type: px4_msgs::msg::FailsafeFlags
 
 
 subscriptions:
