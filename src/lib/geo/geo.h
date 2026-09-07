@@ -53,7 +53,14 @@
 #include <lib/mathlib/mathlib.h>
 #include <lib/matrix/matrix/math.hpp>
 
-static constexpr float CONSTANTS_ONE_G = 9.80665f;						// m/s^2
+// 火星の重力加速度 (地球は 9.80665)。hamazaki_ros2_gazebo_uavs の洞窟ワールド
+// (model/cave.sdf の <gravity> と config/cave_env.yaml の gravity) に合わせてある。
+// EKF2 は傾きの初期化で加速度ノルムを 0.8-1.2 x CONSTANTS_ONE_G でゲートする
+// (src/modules/ekf2/EKF/ekf.cpp)。地球のままだと火星の 3.721 m/s^2 が下限
+// 7.85 を割って EKF2 が一度も初期化されず、"Preflight Fail: ekf2 missing data"
+// で arm できない。ホバリング推力・傾き制限・着陸検知もこの定数を基準にしている。
+// 地球に戻すときは main ブランチ (v1.14.4.radiolink) へ戻して再ビルドする。
+static constexpr float CONSTANTS_ONE_G = 3.721f;						// m/s^2 (Mars)
 
 static constexpr float CONSTANTS_STD_PRESSURE_PA = 101325.0f;					// pascals (Pa)
 static constexpr float CONSTANTS_STD_PRESSURE_KPA = CONSTANTS_STD_PRESSURE_PA / 1000.0f;	// kilopascals (kPa)
