@@ -25,6 +25,12 @@ param set-default EKF2_GPS_CTRL 0
 param set-default EKF2_MAG_TYPE 5
 param set-default EKF2_EV_CTRL 11
 
+# 重力ベクトル融合 (bit 2) を有効にする。既定の 3 (ジャイロ/加速度バイアス推定のみ)
+# だと、火星重力 (3.721 m/s^2) では傾き誤差が生む速度ドリフトが地球の 1/2.64 に
+# なり、静止時のゼロ速度更新だけでは EKF2 の傾き分散が 3 度まで下がらない。
+# 実測: 3 のままだと arm 可能になるまで約 100 秒かかる (7 なら数秒)。
+param set-default EKF2_IMU_CTRL 7
+
 param set-default CA_AIRFRAME 0
 param set-default CA_ROTOR_COUNT 4
 
